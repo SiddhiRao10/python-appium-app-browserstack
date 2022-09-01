@@ -29,14 +29,12 @@ driver = webdriver.Remote(
     command_executor="http://hub-cloud.browserstack.com/wd/hub", 
     desired_capabilities=desired_cap
 )
-
+time.sleep(5)
 # Test case for the BrowserStack sample Android app. 
 # If you have uploaded your app, update the test case here. 
 text = WebDriverWait(driver, 30).until(
     EC.presence_of_element_located((MobileBy.ID, "com.bitrise_io.sample_apps_android_simple_google_play_deploy:id/textView"))
 )
-time.sleep(5)
-assert(len(text) > 0)
 
 # Invoke driver.quit() after the test is done to indicate that the test is completed.
 driver.quit()
