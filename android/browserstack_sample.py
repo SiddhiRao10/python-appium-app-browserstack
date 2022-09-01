@@ -32,6 +32,7 @@ driver = webdriver.Remote(
 time.sleep(5)
 # Test case for the BrowserStack sample Android app. 
 # If you have uploaded your app, update the test case here. 
+
 text = WebDriverWait(driver, 30).until(
     EC.presence_of_element_located((MobileBy.ID, "com.bitrise_io.sample_apps_android_simple_google_play_deploy:id/textView"))
 )
