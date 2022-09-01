@@ -6,11 +6,11 @@ import time
 
 desired_cap = {
     # Set your access credentials
-    "browserstack.user" : "YOUR_USERNAME",
-    "browserstack.key" : "YOUR_ACCESS_KEY",
+    "browserstack.user" : os.environ['BROWSERSTACK_USERNAME'],
+    "browserstack.key" : os.environ['BROWSERSTACK_ACCESSKEY'],
 
     # Set URL of the application under test
-    "app" : "bs://<app-id>",
+    "app" : os.environ['BROWSERSTACK_APP_URL'],
 
     # Specify device and os_version for testing
     "device" : "Google Pixel 3",
