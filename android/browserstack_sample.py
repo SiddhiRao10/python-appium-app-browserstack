@@ -32,17 +32,11 @@ driver = webdriver.Remote(
 
 # Test case for the BrowserStack sample Android app. 
 # If you have uploaded your app, update the test case here. 
-search_element = WebDriverWait(driver, 30).until(
-    EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, "Search Wikipedia"))
+text = WebDriverWait(driver, 30).until(
+    EC.presence_of_element_located((MobileBy.ID, "com.bitrise_io.sample_apps_android_simple_google_play_deploy:id/textView"))
 )
-search_element.click()
-search_input = WebDriverWait(driver, 30).until(
-    EC.element_to_be_clickable((MobileBy.ID, "org.wikipedia.alpha:id/search_src_text"))
-)
-search_input.send_keys("BrowserStack")
 time.sleep(5)
-search_results = driver.find_elements_by_class_name("android.widget.TextView")
-assert(len(search_results) > 0)
+assert(len(text) > 0)
 
 # Invoke driver.quit() after the test is done to indicate that the test is completed.
 driver.quit()
