@@ -7,8 +7,8 @@ import os
 
 desired_cap = {
     # Set your access credentials
-    "browserstack.user" : os.environ['BROWSERSTACK_USERNAMEC'],
-    "browserstack.key" : os.environ['BROWSERSTACK_ACCESS_KEYC'],
+    "browserstack.user" : os.environ['BROWSERSTACK_USERNAME'],
+    "browserstack.key" : os.environ['BROWSERSTACK_ACCESS_KEY'],
 
     # Set URL of the application under test
     "app" : os.environ['BROWSERSTACK_APP_URL'],
